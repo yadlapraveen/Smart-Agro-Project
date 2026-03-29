@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agro - Fresh from the Farm</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="navbar-brand">
+                <div class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-text">Smart Agro</span>
+                    <div class="logo-subtitle">Farm to Market</div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Desktop Nav Links -->
+            <div class="nav-links desktop" id="desktopNav">
+                <a href="#/" class="nav-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+                <a href="#/sell" class="nav-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <path d="M12 1v6m0 6v6"></path>
+                        <path d="M4.22 4.22l4.24 4.24m-4.24 8.08l4.24 4.24M19.78 4.22l-4.24 4.24m4.24 8.08l-4.24 4.24"></path>
+                    </svg>
+                    Sell
+                </a>
+                <a href="#/my-listings" class="nav-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 3h-2v4H10V3H8"></path>
+                    </svg>
+                    My Listings
+                </a>
+                <a href="#/orders" class="nav-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                    My Orders
+                </a>
+            </div>
+
+            <!-- Right Actions -->
+         <div class="nav-actions">
+
+<!-- Cart -->
+<a href="#/cart" class="nav-action-btn cart-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+    </svg>
+    <span class="cart-count" id="cartCount" style="display:none;">0</span>
+</a>
+
+
+<!-- User Menu -->
+<div class="user-menu">
+<button class="user-menu-btn" id="userMenuBtn">
+
+<div class="user-avatar" id="userAvatar">
+
+<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+
+<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+
+</svg>
+
+</div>
+
+<span class="user-name" id="userName"></span>
+
+</button>
+
+<div class="user-dropdown" id="userDropdown" style="display:none;">
+
+<div class="profile-header">
+
+<div class="profile-name"></div>
+
+<div class="profile-email"></div>
+
+</div>
+
+<a href="#/settings" class="dropdown-item">⚙ Settings</a>
+
+<a href="#/orders" class="dropdown-item">📋 My Orders</a>
+
+<a href="#/my-listings" class="dropdown-item">📦 My Listings</a>
+
+<button class="dropdown-item logout-btn" id="logoutBtn">
+
+Sign Out
+
+</button>
+
+</div>
+
+</div>
+
+<button class="btn btn-primary auth-btn" id="authBtn" style="display:none;">Sign In</button>
+
+<!-- 🎤 Voice Assistance Button -->
+<button id="voiceBtn" style="
+    margin-left:10px;
+    background:#1B4332;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+">
+🎤 Voice Assistance
+</button>
+
+</div>
+        </div>
+
+        <!-- Mobile Nav Links -->
+        <div class="nav-links mobile" id="mobileNav" style="display:none;">
+            <a href="#/" class="nav-link">Home</a>
+            <a href="#/sell" class="nav-link">Sell</a>
+            <a href="#/my-listings" class="nav-link">My Listings</a>
+            <a href="#/orders" class="nav-link">My Orders</a>
+        </div>
+    </nav>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal" style="display:none;">
+        <div class="modal-content auth-modal-content">
+            <button class="modal-close" id="authModalClose">×</button>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab">Login</button>
+                <button class="auth-tab" id="signupTab">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form class="auth-form active" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div id="app"></div>
+    </main>
+
+   <!-- Toast Notifications -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- EDIT PRODUCT MODAL -->
+<div id="editModal" class="modal" style="display:none;">
+  <div class="modal-content" style="max-width:500px; padding:20px;">
+
+    <div style="display:flex; justify-content:space-between; align-items:center;
+       margin-bottom:20px;">
+      <h2>Edit Product</h2>
+      <span onclick="closeEditModal()" style="cursor:pointer;font-size:22px;">×</span>
+    </div>
+
+    <form id="editProductForm">
+
+      <div class="form-group">
+        <label>Title*</label>
+        <input type="text" id="editTitle">
+      </div>
+<div class="form-group">
+<label>Category*</label>
+
+<select id="editCategory">
+
+<option value="Seeds">Seeds</option>
+
+<option value="Livestock">Livestock</option>
+
+<option value="Fresh Produce">Fresh Produce</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Unit *</label>
+
+<select id="editUnit">
+
+<option value="kg">kg</option>
+<option value="piece">piece</option>
+<option value="bundle">bundle</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+<label>Image URL</label>
+<input type="text" id="editImage">
+</div>
+
+      <div style="display:flex; gap:10px;">
+        <div class="form-group" style="flex:1;">
+          <label>Price (₹)</label>
+          <input type="number" id="editPrice">
+        </div>
+
+        <div class="form-group" style="flex:1;">
+          <label>Stock</label>
+          <input type="number" id="editStock">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Location*</label>
+        <input type="text" id="editLocation">
+      </div>
+
+      <div class="form-group">
+        <label>Description*</label>
+        <textarea id="editDescription"></textarea>
+      </div>
+
+      <label class="form-checkbox">
+<input type="checkbox" id="editOrganic">
+Certified Organic
+</label>
+
+      <div style="display:flex; gap:10px; margin-top:15px;">
+        <button type="button" class="btn" onclick="closeEditModal()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <div class="logo-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span>Smart Agro</span>
+                    </div>
+                    <p class="footer-description">Connecting farmers and buyers with trusted agricultural products across categories.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">𝕏</a>
+                        <a href="#" class="social-link">📷</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#/">Browse Products</a></li>
+                        <li><a href="#/sell">Sell Products</a></li>
+                        <li><a href="#/orders">My Orders</a></li>
+                        <li><a href="#/cart">Shopping Cart</a></li>
+                        <li><a href="#/settings">Account Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#/?category=Seeds">Seeds</a></li>
+                        <li><a href="#/?category=Livestock">Livestock</a></li>
+                        <li><a href="#/?category=Fresh%20Produce">Fresh Produce</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <span class="contact-icon">✉</span>
+                            support@smartagro.com
+                        </li>
+                        <li>
+                            <span class="contact-icon">☎</span>
+                            +91 9876543210
+                        </li>
+                        <li>
+                            <span class="contact-icon">📍</span>
+                            Online marketplace support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright 2026 Smart Agro. All rights reserved.</p>
+                <p>Sustainable agriculture, smarter trade.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+ <script src="styles/js/api.js"></script>
+<script src="styles/js/utils.js"></script>
+
+<script src="styles/js/pages/home.js"></script>
+<script src="styles/js/pages/product-detail.js"></script>
+<script src="styles/js/pages/cart.js"></script>
+<script src="styles/js/pages/checkout.js"></script>
+<script src="styles/js/pages/orders.js"></script>
+<script src="styles/js/pages/sell-product.js"></script>
+<script src="styles/js/pages/my-listings.js"></script>
+<script src="styles/js/pages/settings.js"></script>
+
+<script src="styles/js/app.js"></script>
+</body>
+</html>
