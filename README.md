@@ -1,4 +1,4 @@
-# Smart Agro - Agricultural E-commerce Platform
+# Smart Agro - E-commerce Platform
 ## Built with Vanilla HTML, CSS, and JavaScript
 
 This is a complete rebuild of the Smart Agro platform using vanilla HTML, CSS, and JavaScript for the frontend, with Node.js Express backend and MySQL database.
@@ -330,10 +330,10 @@ Open your browser and navigate to:
 
 ## Browser Compatibility
 
-- Chrome/Edge: ✅ Full support
-- Firefox: ✅ Full support
-- Safari: ✅ Full support
-- Mobile browsers: ✅ Full support
+- Chrome/Edge: Full support
+- Firefox: Full support
+- Safari: Full support
+- Mobile browsers: Full support
 
 ---
 
@@ -428,4 +428,3 @@ For issues or questions:
 
 ---
 
-Made with ❤️ for Smart Agro
