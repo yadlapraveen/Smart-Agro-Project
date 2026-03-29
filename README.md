@@ -1,5 +1,5 @@
 # Smart Agro - E-commerce Platform
-## Built with Vanilla HTML, CSS, and JavaScript
+## Built with HTML, CSS, and JavaScript
 
 This is a complete rebuild of the Smart Agro platform using vanilla HTML, CSS, and JavaScript for the frontend, with Node.js Express backend and MySQL database.
 
